@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft Pastel Medical Theme */
+    --background: 210 40% 98%; /* Very Light Blue-Gray */
+    --foreground: 210 20% 25%; /* Dark Slate Blue */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 20% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 25%;
+
+    --primary: 200 80% 60%; /* Soft Sky Blue */
+    --primary-foreground: 210 40% 98%; /* Light text for primary */
+
+    --secondary: 270 70% 75%; /* Pastel Lavender */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 30% 90%; /* Light Gray-Blue */
+    --muted-foreground: 210 15% 45%; /* Medium Slate Blue */
+
+    --accent: 150 60% 70%; /* Soft Mint Green */
+    --accent-foreground: 210 20% 25%;
+
+    --destructive: 0 70% 70%; /* Soft Coral Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 85%; /* Light Gray Border */
+    --input: 210 20% 90%; /* Slightly darker input background */
+    --ring: 200 80% 70%; /* Brighter Sky Blue for focus rings */
+
+    --radius: 0.5rem; /* Softer corners */
+  }
+
+  .dark {
+    /* Dark Theme (Optional - Keeping a darker variant) */
+    --background: 220 25% 10%; 
+    --foreground: 220 15% 90%;
+
+    --card: 220 25% 15%;
+    --card-foreground: 220 15% 90%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 90%;
+
+    --primary: 200 70% 55%; /* Slightly more saturated blue for dark */
+    --primary-foreground: 210 20% 95%;
+
+    --secondary: 270 60% 65%; /* Lavender for dark */
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 220 20% 25%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 150 50% 60%; /* Mint for dark */
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 60% 60%; /* Coral for dark */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 30%;
+    --input: 220 20% 30%;
+    --ring: 200 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar - can be adjusted or removed if default is preferred */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
